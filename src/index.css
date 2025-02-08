@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-900 font-space;
+}
+
+.section-title {
+  @apply text-4xl font-bold text-star mb-8 relative;
+}
+
+.section-title::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-20 h-1 bg-nebula;
+}
+
+.tech-card {
+  @apply bg-cosmos p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border border-star/20;
+}
+
+.input-style {
+  @apply w-full p-3 bg-space border border-star/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-star;
+}
+
+.nav-link {
+  @apply hover:text-star transition-colors duration-300;
+}
+
+/* Star animation */
+.stars, .stars2, .stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.stars {
+  background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat;
+  animation: sparkle 200s linear infinite;
+}
+
+.stars2 {
+  background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars2.png') repeat;
+  animation: sparkle 300s linear infinite;
+}
+
+.stars3 {
+  background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars3.png') repeat;
+  animation: sparkle 400s linear infinite;
+}
+
+@keyframes sparkle {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
