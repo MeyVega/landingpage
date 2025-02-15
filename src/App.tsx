@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { FaGithub, FaLinkedin, FaReact, FaNodeJs, FaPython, FaBars, FaTimes, FaRocket, FaJs, FaPhp, FaHtml5, FaCss3Alt, FaAws } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiMongodb, SiMysql, SiMicrosoftazure } from 'react-icons/si';
+import { SiTypescript, SiTailwindcss, SiMongodb, SiMysql } from 'react-icons/si';
+import { VscAzure } from "react-icons/vsc";
+import photo from "./img/photo.jpg";
+import Contact from './components/ContactForm';
+
+
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +26,7 @@ function App() {
           <div className="flex justify-between items-center h-16">
             <a href="#" className="text-2xl font-bold">
               <FaRocket className="inline-block mr-2" />
-              Space<span className="text-star">Dev</span>
+              May<span className="text-star">Space</span>
             </a>
 
             {/* Mobile menu button */}
@@ -133,20 +138,36 @@ function App() {
 
       {/* About Me */}
       <section id="about" className="py-16 bg-cosmos">
-        <div className="container mx-auto px-4">
-          <h2 className="section-title">About Me</h2>
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-gray-300 mb-6">
-              Like a comet traversing the digital galaxy, I explore new technologies and create stellar web experiences.
-              With each project, I bring the cosmic wonders into the digital realm.
-            </p>
-            <div className="flex justify-center gap-4">
-              <a href="#" className="text-star hover:text-nebula text-2xl"><FaGithub /></a>
-              <a href="#" className="text-star hover:text-nebula text-2xl"><FaLinkedin /></a>
+      <div className="container mx-auto px-4">
+        <h2 className="section-title">About Me</h2>
+        <div className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto">
+            {/* Imagen agregada */}         
+           <div className="shrink-0 md:w-1/3">
+                <img 
+                    src={photo}
+                    alt="Mery"
+                    className="w-64 h-64 rounded-full object-cover border-2 border-nebula shadow-galaxy"
+                />
             </div>
-          </div>
+
+            <div className="flex-1 text-center md:text-left">
+                <p className="text-lg text-gray-300 mb-6">
+                    Like a comet traversing the digital galaxy, I explore new technologies and create stellar web experiences.
+                    With each project, I bring the cosmic wonders into the digital realm. Passionate about technology, with experience in web development, cloud computing, and cibersecurity. Skilled in creating funtional and visually appealing solutions using technologies such programming languages. Certified in cloud services including AWS, Azure, and Microsoft, with expertise in responsive desing, API integration, and CMS customization. Demonstrated ability to solve problems, optimize resources, and collaborate effectively in agile environments.
+                </p>
+                
+                <div className="flex justify-center md:justify-start gap-4">
+                    <a href="#" className="text-star hover:text-nebula text-2xl">
+                        <FaGithub />
+                    </a>
+                    <a href="#" className="text-star hover:text-nebula text-2xl">
+                        <FaLinkedin />
+                    </a>
+                </div>
+            </div>
         </div>
-      </section>
+      </div>
+</section>
 
       {/* Skills */}
       <section id="skills" className="py-16 bg-space">
@@ -190,7 +211,7 @@ function App() {
               <h3 className="font-bold">Python</h3>
             </div>
             <div className="tech-card">
-              <SiMicrosoftazure className="text-4xl text-star mb-4 mx-auto" />
+              <VscAzure className="text-4xl text-star mb-4 mx-auto" />
               <h3 className="font-bold">Microsoft Azure</h3>
             </div>
             <div className="tech-card">
@@ -209,36 +230,32 @@ function App() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="py-16 bg-cosmos">
-        <div className="container mx-auto px-4">
-          <h2 className="section-title">Wanna talk?</h2>
-          <div className="max-w-2xl mx-auto">
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-gray-300 mb-2">Name</label>
-                <input type="text" id="name" className="input-style" />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-gray-300 mb-2">Your email*</label>
-                <input type="email" id="email" required className="input-style" />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-gray-300 mb-2">Message*</label>
-                <textarea id="message" required rows={4} className="input-style"></textarea>
-              </div>
-              <button type="submit" className="bg-star text-space px-8 py-3 rounded-md hover:bg-nebula hover:text-white transition-colors w-full">
-                Launch Message 🚀
-              </button>
-            </form>
-            <p className="mt-6 text-gray-400 text-center">
-              Contact me with any questions or just to say a few nice words ... or mean ones. Up to you .... free will and all
-            </p>
-          </div>
+     {/* Contact */}
+        <div>
+            <Contact />
         </div>
-      </section>
+
+     {/* Footer */}
+      <footer className="bg-dark text-gray-300 py-8">
+  <div className="container mx-auto text-center">
+    <p>&copy; 2025 Mery Vega M. All rights reserved.</p>
+    <div className="flex justify-center mt-4">
+      <a href="https://www.linkedin.com/in/your-profile" target="_blank" className="mx-3 hover:text-cosmos">
+        LinkedIn
+      </a>
+      <a href="https://github.com/your-profile" target="_blank" className="mx-3 hover:text-cosmos">
+        GitHub
+      </a>
+      <a href="meryvegam16@gmail.com" className="mx-3 hover:text-cosmos">
+        Email
+      </a>
+    </div>
+  </div>
+</footer>
+
+
     </div>
   );
 }
 
-export default App;
+export default App
