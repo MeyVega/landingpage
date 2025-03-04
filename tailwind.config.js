@@ -1,3 +1,4 @@
+// tailwind.config.ts
 export default {
   content: [
     "./index.html",
@@ -6,10 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'space': '#0B1026',
-        'star': '#64CCC5',
-        'nebula': '#7E30E1',
-        'cosmos': '#1A1B4B',
+        // Fondo principal pastel (inspirado en el contorno teal de la oveja)
+        'space': '#E6F8F8',
+        // Teal principal (contorno de la oveja)
+        'star': '#68A3A8',
+        // Teal más claro (para hover, acentos suaves, etc.)
+        'nebula': '#9CD1D4',
+        // Negro para contrastes fuertes o textos destacados (cuerpo de la oveja)
+        'cosmos': '#000000',
       },
       fontFamily: {
         'space': ['Poppins', 'sans-serif'],

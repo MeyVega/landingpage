@@ -4,32 +4,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 
+  Paleta inspirada en la oveja:
+  - Contorno Teal: #68A3A8 (aprox.)
+  - Cuerpo oscuro: #000000
+  - Para pastel, usamos un fondo claro cercano al teal: #E6F8F8
+  - Texto gris oscuro para mejor legibilidad: #333
+*/
+
 body {
-  @apply bg-gray-900 font-space;
+  @apply bg-[#8ae0e0] text-[#333] font-space;
 }
 
 .section-title {
-  @apply text-4xl font-bold text-star mb-8 relative;
+  @apply text-4xl font-bold mb-8 relative;
+  color: #000; /* Inspirado en la lana negra de la oveja */
 }
 
 .section-title::after {
   content: '';
-  @apply absolute bottom-0 left-0 w-20 h-1 bg-nebula;
+  @apply absolute bottom-0 left-0 w-20 h-1;
+  background-color: #68A3A8; /* Tono teal del contorno de la oveja */
 }
 
 .tech-card {
-  @apply bg-cosmos p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border border-star/20;
+  /* Fondo blanco para resaltar sobre el pastel y borde teal */
+  @apply bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300;
+  border: 1px solid #68A3A8;
 }
 
 .input-style {
-  @apply w-full p-3 bg-space border border-star/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-star;
+  @apply w-full p-3 bg-white border rounded-md focus:outline-none focus:ring-2;
+  border-color: #68A3A8; 
+  color: #333;
+  @apply focus:ring-[#68A3A8];
 }
 
 .nav-link {
-  @apply hover:text-star transition-colors duration-300;
+  @apply hover:text-[#68A3A8] transition-colors duration-300;
 }
 
-/* Star animation */
+/* Opcional: si deseas mantener la animación de estrellas (puedes cambiar las imágenes
+   por otras más claras o dejarlas tal cual) */
 .stars, .stars2, .stars3 {
   position: fixed;
   top: 0;
